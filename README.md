@@ -1,2 +1,2 @@
 # ModelX
-A Machine Learning Model
+A Supermodel Prediction Machine Learning Model
