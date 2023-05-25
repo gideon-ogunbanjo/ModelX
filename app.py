@@ -8,10 +8,9 @@ import pandas as pd
 df = pd.read_csv("bodyfat.csv")
 # pipe = pickle.load(open("pipe.pkl", "rb"))
 
-st.title("ModelX - Supermodel Prediction Model")
+st.title("ModelX - A Supermodel Prediction Model")
 
-# taking user input
-
+""" -- Taking user input -- """
 #age
 age = st.selectbox('Age: ', df['Age'].unique())
 
