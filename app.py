@@ -16,7 +16,7 @@ st.title("ModelX - A Supermodel Prediction Model")
 age = st.selectbox('Age: ', df['Age'].unique())
 
 # Density
-Density = st.selectbox("Density: ", df['Density'].unique())
+Density = st.sidebar.slider("Density: ", df['Density'].unique())
 
 # weight
 weight = st.selectbox("Weight: ", df['Weight'].unique())
