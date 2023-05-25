@@ -13,43 +13,43 @@ st.title("ModelX - A Supermodel Prediction Model")
 # -- Taking user input -- 
 #age
 
-age = st.selectbox('Age: ', df['Age'].unique())
+age = st.number_input('Age: ')
 
 # Density
-Density = st.sidebar.slider("Density: ", df['Density'].unique())
+Density = st.number_input("Density: ")
 
 # weight
-weight = st.selectbox("Weight: ", df['Weight'].unique())
+weight = st.number_input("Weight: ")
 
 # height
-height = st.selectbox("Height: ", df['Height'].unique())
+height = st.number_input("Height: ")
 
 #neck
-neck = st.selectbox('Neck Size: ', df['Neck'].unique())
+neck = st.number_input('Neck Size: ')
 
 # chest
-chest = st.selectbox("Chest Size: ", df['Chest'].unique())
+chest = st.number_input("Chest Size: ")
 
 # abdomen
-abdomen = st.selectbox("Abdomen Size: ", df['Abdomen'].unique())
+abdomen = st.number_input("Abdomen Size: ")
 
 # hip
-hip = st.selectbox("Hip Size: ", df['Hip'].unique())
+hip = st.number_input("Hip Size: ")
 
 #thigh
-thigh = st.selectbox('Thigh Size: ', df['Thigh'].unique())
+thigh = st.number_input('Thigh Size: ')
 
 # knee
-knee = st.selectbox("Knee Size", df['Knee'].unique())
+knee = st.number_input("Knee Size: ")
 
 # ankle
-ankle = st.selectbox("Ankle Measurement", df['Ankle'].unique())
+ankle = st.number_input("Ankle Measurement: ")
 
 # biceps
-biceps = st.selectbox("Bicep Size: ", df['Biceps'].unique())
+biceps = st.number_input("Bicep Size: ")
 
 #forearm
-forearm = st.selectbox('Forearm Size: ', df['Forearm'].unique())
+forearm = st.number_input('Forearm Size: ',)
 
 # wrist
-wrist = st.selectbox("Wrist Size: ", df['Wrist'].unique())
+wrist = st.number_input("Wrist Size: ")
