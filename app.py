@@ -53,3 +53,8 @@ forearm = st.number_input('Forearm Size: ',)
 
 # wrist
 wrist = st.number_input("Wrist Size: ")
+
+# running predictions
+
+if st.button('Predict'):
+    ppi = None
