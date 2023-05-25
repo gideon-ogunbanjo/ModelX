@@ -10,10 +10,11 @@ df = pd.read_csv("bodyfat.csv")
 
 st.title("ModelX - A Supermodel Prediction Model")
 
-""" 
+''' 
 -- Taking user input -- 
-"""
+'''
 #age
+
 age = st.selectbox('Age: ', df['Age'].unique())
 
 # Density
