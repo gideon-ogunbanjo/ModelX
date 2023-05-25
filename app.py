@@ -16,7 +16,7 @@ st.title("ModelX - A Supermodel Prediction Model")
 age = st.number_input('Age: ')
 
 # Density
-Density = st.number_input("Density: ")
+density = st.number_input("Density: ")
 
 # weight
 weight = st.number_input("Weight: ")
