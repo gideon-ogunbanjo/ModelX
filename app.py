@@ -6,7 +6,7 @@ import pandas as pd
 
 #load the model and dataframe
 df = pd.read_csv("bodyfat.csv")
-# pipe = pickle.load(open("pipe.pkl", "rb"))
+pipe = pickle.load(open("pipe.pkl", "rb"))
 
 st.title("ModelX - A Supermodel Prediction Model")
 
