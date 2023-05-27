@@ -25,7 +25,7 @@ weight = st.number_input("Weight: ")
 height = st.number_input("Height: ")
 
 #neck
-neck = st.number_input('Neck Size: ')
+neck = st.number_input("Neck Size: ")
 
 # chest
 chest = st.number_input("Chest Size: ")
@@ -37,7 +37,7 @@ abdomen = st.number_input("Abdomen Size: ")
 hip = st.number_input("Hip Size: ")
 
 #thigh
-thigh = st.number_input('Thigh Size: ')
+thigh = st.number_input("Thigh Size: ")
 
 # knee
 knee = st.number_input("Knee Size: ")
@@ -49,7 +49,7 @@ ankle = st.number_input("Ankle Measurement: ")
 biceps = st.number_input("Bicep Size: ")
 
 #forearm
-forearm = st.number_input('Forearm Size: ',)
+forearm = st.number_input("Forearm Size: ")
 
 # wrist
 wrist = st.number_input("Wrist Size: ")
