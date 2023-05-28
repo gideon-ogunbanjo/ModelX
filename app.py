@@ -8,7 +8,7 @@ import pandas as pd
 df = pd.read_csv("bodyfat.csv")
 pipe = pickle.load(open("pipe.pkl", "rb"))
 
-st.title("ModelX - A Supermodel Prediction Model")
+st.title("ModelX - Supermodel Prediction Model")
 
 # -- Taking user input -- 
 #age
