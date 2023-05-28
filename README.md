@@ -12,8 +12,7 @@ ModelX is a Linear Regression model, which has been trained on a large dataset o
 ### Model Performance:
 ModelX has been evaluated on a separate testing dataset, achieving a Mean Squared Error (MSE) of 0.87 and an R2 score of 0.99. The model was was evaluated and produced an overall model accuracy of 98%. These metrics indicate that ModelX has an excellent predictive performance and can provide accurate predictions of body fat percentage.
 
-I also used the Decision Tree regressor for test runs and it produced a Mean Squared Error of 0.9 and an R2 score of 0.91. The metrics also prove that the algorithm is suitable for the model. 
-Comparing the two metrics, the Linear Regression is the best pick because it has a better model accuracy (98%).
+Comparing the metrics, the Linear Regression is the best pick because it has a better model accuracy (98%).
 
 ### Conclusion:
 ModelX is a powerful tool for predicting body fat percentage and assessing an individual's chances of becoming a supermodel. By utilizing advanced machine learning techniques, ModelX can provide accurate predictions and help identify individuals who may be suitable for a career in modeling.
