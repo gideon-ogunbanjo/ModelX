@@ -46,7 +46,7 @@ def user_input_features():
 df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
-iris = pd.read_csv('bodyfat.csv')
+iris = datasets.load_iris()
 X = iris.data
 Y = iris.target
 clf = DecisionTreeClassifier()
