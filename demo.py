@@ -42,3 +42,21 @@ def user_input_features():
             'Wrist':wrist}
     features = pd.DataFrame(data, index=[0])
     return features
+
+
+df = user_input_features()
+st.subheader('User Input parameters')
+st.write(df)
+model = xgb.XGBRegressor()
+model.load_model("model.json")
+X = model.features
+y = model.labels
+model.fit(X, y)
+prediction = model.predict(df)
+prediction_proba = model.predict_proba(df)
+st.subheader('Labels of Class and their respective index numbers')
+st.write(model.target_names)
+st.subheader('Prediction')
+st.write(model.target_names[prediction])
+st.subheader('Prediction Probability')
+st.write(prediction_proba)
