@@ -10,8 +10,9 @@ import joblib
 df = pd.read_csv("bodyfat.csv")
 pipe = pickle.load(open("pipe.pkl", "rb"))
 
-st.title("ModelX - Supermodel Prediction Model")
-
+with st.columns(3)[1]:
+     st.title("ModelX")
+st.markdown("Enter user parameters")
 # -- Taking user input -- 
 
 #age
