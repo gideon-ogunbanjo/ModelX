@@ -3,16 +3,17 @@ import streamlit as st
 import numpy as np
 import pickle
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 
-#load the model and dataframe
+#loading the model dataset ande pickle file
 df = pd.read_csv("bodyfat.csv")
 pipe = pickle.load(open("pipe.pkl", "rb"))
 
 st.title("ModelX - Supermodel Prediction Model")
 
 # -- Taking user input -- 
-#age
 
+#age
 age = st.number_input('Age: ')
 
 # Density
