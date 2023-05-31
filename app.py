@@ -12,6 +12,8 @@ df = pd.read_csv("bodyfat.csv")
 
 with st.columns(3)[1]:
      st.title("ModelX")
+with st.columns(3)[1]:
+     st.markdown("Supermodel Prediction Model")
 st.markdown("Enter user parameters")
 # -- Taking user input -- 
 
