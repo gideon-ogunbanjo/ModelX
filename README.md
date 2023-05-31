@@ -14,6 +14,9 @@ ModelX has been evaluated on a separate testing dataset, achieving a Mean Square
 
 Comparing the metrics, the Linear Regression is the best pick because it has a better model accuracy (98%).
 
+### Deployment:
+ModelX will be deployed on Streamlit as soon as production is complete.
+
 ### Conclusion:
 ModelX is a powerful tool for predicting body fat percentage and assessing an individual's chances of becoming a supermodel. By utilizing advanced machine learning techniques, ModelX can provide accurate predictions and help identify individuals who may be suitable for a career in modeling.
 
