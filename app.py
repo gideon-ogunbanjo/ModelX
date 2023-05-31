@@ -9,7 +9,6 @@ import joblib
 
 #loading the model dataset ande pickle file
 df = pd.read_csv("bodyfat.csv")
-pipe = pickle.load(open("pipe.pkl", "rb"))
 
 with st.columns(3)[1]:
      st.title("ModelX")
