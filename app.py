@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.compose import ColumnTransformer
 import joblib
 
 #loading the model dataset ande pickle file
