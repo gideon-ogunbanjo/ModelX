@@ -9,11 +9,10 @@ import joblib
 
 #loading the model dataset ande pickle file
 df = pd.read_csv("bodyfat.csv")
+# pipe = pickle.load(open("pipe.pkl", "rb"))
 
 with st.columns(3)[1]:
      st.title("ModelX")
-with st.columns(3)[1]:
-     st.markdown("Supermodel Prediction Model")
 st.markdown("Enter user parameters")
 # -- Taking user input -- 
 
@@ -61,10 +60,10 @@ wrist = st.number_input("Wrist Size: ")
 
 # running predictions
 
-if st.button('Predict'):
-    ppi = None
-    query = np.array([age, density, weight, height, neck, chest, abdomen, hip, thigh, knee, ankle, biceps, forearm, wrist])
-    query = query.reshape(1, 14)
-    prediction = str(int(np.exp(pipe.predict(query)[0])))
-    st.title("The predicted body fat perentage of this individual is: " + prediction)
-st.markdown("Created by Gideon Ogunbanjo")
+# if st.button('Predict'):
+#     ppi = None
+#     query = np.array([age, density, weight, height, neck, chest, abdomen, hip, thigh, knee, ankle, biceps, forearm, wrist])
+#     query = query.reshape(1, 14)
+#     prediction = str(int(np.exp(pipe.predict(query)[0])))
+#     st.title("The predicted body fat perentage of this individual is: " + prediction)
+# st.markdown("Created by Gideon Ogunbanjo")
