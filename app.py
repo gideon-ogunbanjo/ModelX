@@ -6,6 +6,19 @@ import numpy as np
 # loading and unpickling the pickle file
 model = pickle.load(open('modelX.pkl','rb'))
 
+# creating welcome page
+st.set_page_config(
+    page_title="ModelX",
+    page_icon="🤖",
+    layout="centered",
+    initial_sidebar_state="expanded",
+)
+
+from PIL import Image
+image = Image.open('')
+
+st.image(image,
+      use_column_width=True)
 
 #creating a function to use the pickle file to make predictions
 def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
