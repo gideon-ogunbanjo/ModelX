@@ -2,9 +2,16 @@
 import streamlit as st
 import pickle
 import numpy as np
-
-# loading and unpickling the pickle file
-model = pickle.load(open('modelX.pkl','rb'))
+import json
+# loading and reading the JSON file
+# Opening JSON file
+model = open('model.json')
+  
+# returns JSON object as 
+# a dictionary
+data = json.load(model)
+# Closing file
+model.close()
 
 # creating welcome page
 st.set_page_config(
@@ -15,7 +22,7 @@ st.set_page_config(
 )
 
 from PIL import Image
-image = Image.open('')
+image = Image.open('ModelX.png')
 
 st.image(image,
       use_column_width=True)
