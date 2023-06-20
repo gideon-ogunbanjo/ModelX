@@ -57,20 +57,15 @@ def main():
         <div style="background-color:#80ff80; padding:10px >
         <h2 style="color:white;text-align:center;"> The individual is Fantastic for modeling</h2>
         </div>
-        """
-    safe_html ="""  
-      <div style="background-color:#80ff80; padding:10px >
-      <h2 style="color:white;text-align:center;"> The Individual is suitable</h2>
-      </div>
     """
     warn_html ="""  
       <div style="background-color:#F4D03F; padding:10px >
-      <h2 style="color:white;text-align:center;"> The individual is managable</h2>
+      <h2 style="color:white;text-align:center;"> The individual is not advised to pursue a career in modeling</h2>
       </div>
     """
     danger_html="""  
       <div style="background-color:#F08080; padding:10px >
-       <h2 style="color:black ;text-align:center;"> The individual is not suitable</h2>
+       <h2 style="color:black ;text-align:center;"> The individual is not suitable for modeling</h2>
        </div>
     """
 
