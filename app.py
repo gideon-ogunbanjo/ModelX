@@ -21,12 +21,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-from PIL import Image
-image = Image.open('ModelX.png')
-
-st.image(image,
-      use_column_width=True)
-
 #creating a function to use the pickle file to make predictions
 def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
@@ -46,19 +40,19 @@ def main():
     
     #taking user input
     Density = st.text_input("Density","Type Here")
-    Age = st.text_input("Age","Type Here")
-    Weight = st.text_input("Weight","Type Here")
-    Height = st.text_input("Height","Type Here")
-    Neck = st.text_input("Neck","Type Here")
-    Chest = st.text_input("Chest","Type Here")
-    Abdomen = st.text_input("Abdomen","Type Here")
-    Hip = st.text_input("Hip","Type Here")
-    Thigh = st.text_input("Thigh","Type Here")
-    Knee = st.text_input("Knee","Type Here")
-    Ankle = st.text_input("Ankle","Type Here")
-    Biceps = st.text_input("Biceps","Type Here")
-    Forearm = st.text_input("Forearm","Type Here")
-    Wrist = st.text_input("Wrist","Type Here")
+    Age = st.text_input("Age:","Type Here")
+    Weight = st.text_input("Weight:","Type Here")
+    Height = st.text_input("Height:","Type Here")
+    Neck = st.text_input("Neck Size:","Type Here")
+    Chest = st.text_input("Chest Size:","Type Here")
+    Abdomen = st.text_input("Abdomen Size:","Type Here")
+    Hip = st.text_input("Hip Width:","Type Here")
+    Thigh = st.text_input("Thigh Size:","Type Here")
+    Knee = st.text_input("Knee Size:","Type Here")
+    Ankle = st.text_input("Ankle Size:","Type Here")
+    Biceps = st.text_input("Biceps Size:","Type Here")
+    Forearm = st.text_input("Forearm Size:","Type Here")
+    Wrist = st.text_input("Wrist Size:","Type Here")
     safe_html ="""  
         <div style="background-color:#80ff80; padding:10px >
         <h2 style="color:white;text-align:center;"> The individual is Fantastic for modeling</h2>
@@ -82,7 +76,7 @@ def main():
 
     if st.button("Predict the BodyFat"):
         output = predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-        st.success('The age is {}'.format(output))
+        st.success('The predicted body fat is {}'.format(output))
 
         if output == 1:
             st.markdown(safe_html,unsafe_allow_html=True)
