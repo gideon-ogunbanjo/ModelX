@@ -3,15 +3,16 @@ import streamlit as st
 import pickle
 import numpy as np
 import json
-# loading and reading the JSON file
-# Opening the JSON file
-model = open('model.json')
+# loading and reading the file
+# Opening the file
+model = pickle.load(open('modelX.pkl','rb'))
+# model = open('model.json')
   
-# returns JSON object as 
-# a dictionary
-data = json.load(model)
-# Closing file
-model.close()
+# # returns JSON object as 
+# # a dictionary
+# data = json.load(model)
+# # Closing file
+# model.close()
 
 # creating welcome page
 st.set_page_config(

@@ -15,7 +15,7 @@ ModelX has been evaluated on a separate testing dataset, achieving a Mean Square
 Comparing the metrics, the Linear Regression is the best pick because it has a better model accuracy (98%).
 
 ### Deployment:
-Following the conclusion of the development phase, the deployment strategy entails the availability of ModelX both a Web App and an API. This comprehensive approach aims to ensure widespread accessibility and usability of ModelX, catering to diverse user needs and preferences.
+Following the conclusion of the development phase, the deployment strategy entails the availability of ModelX both as a Web App and an API. This comprehensive approach aims to ensure widespread accessibility and usability of ModelX, catering to diverse user needs and preferences.
 
 ### Conclusion:
 ModelX is a powerful tool for predicting body fat percentage and assessing an individual's chances of becoming a supermodel. By utilizing advanced machine learning techniques, ModelX can provide accurate predictions and help identify individuals who may be suitable for a career in modeling.
