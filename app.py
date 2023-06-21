@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import json
 # loading and reading the JSON file
-# Opening JSON file
+# Opening the JSON file
 model = open('model.json')
   
 # returns JSON object as 
@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-#creating a function to use the pickle file to make predictions
+#creating a function that uses the file to make predictions
 def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
@@ -39,20 +39,20 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
     
     #taking user input
-    Density = st.text_input("Density","Type Here")
-    Age = st.text_input("Age:","Type Here")
-    Weight = st.text_input("Weight:","Type Here")
-    Height = st.text_input("Height:","Type Here")
-    Neck = st.text_input("Neck Size:","Type Here")
-    Chest = st.text_input("Chest Size:","Type Here")
-    Abdomen = st.text_input("Abdomen Size:","Type Here")
-    Hip = st.text_input("Hip Width:","Type Here")
-    Thigh = st.text_input("Thigh Size:","Type Here")
-    Knee = st.text_input("Knee Size:","Type Here")
-    Ankle = st.text_input("Ankle Size:","Type Here")
-    Biceps = st.text_input("Biceps Size:","Type Here")
-    Forearm = st.text_input("Forearm Size:","Type Here")
-    Wrist = st.text_input("Wrist Size:","Type Here")
+    Density = st.number_input("Density: ")
+    Age = st.number_input('Age', min_value=1, max_value=50, value=1, step=1)
+    Weight = st.number_input("Weight: ")
+    Height = st.number_input("Height: ")
+    Neck = st.number_input("Neck Size: ")
+    Chest = st.number_input("Chest Size: ")
+    Abdomen = st.number_input("Abdomen Size: ")
+    Hip = st.number_input("Hip Width: ")
+    Thigh = st.number_input("Thigh Size: ")
+    Knee = st.number_input("Knee Size: ")
+    Ankle = st.number_input("Ankle Size: ")
+    Biceps = st.number_input("Biceps Size: ")
+    Forearm = st.number_input("Forearm Size: ")
+    Wrist = st.number_input("Wrist Size: ")
     safe_html ="""  
         <div style="background-color:#80ff80; padding:10px >
         <h2 style="color:white;text-align:center;"> The individual is Fantastic for modeling</h2>
