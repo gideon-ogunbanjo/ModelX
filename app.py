@@ -72,13 +72,13 @@ def main():
 
     if st.button("Predict the BodyFat"):
         output = predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-        st.success('The predicted body fat is {}'.format(output))
+        st.success('The predicted body fat is {}%'.format(output))
 
-        if output == 1:
+        if output > 15 and output < 20:
             st.markdown(safe_html,unsafe_allow_html=True)
-        elif output == 2:
+        elif output > 20 and output <25:
             st.markdown(warn_html,unsafe_allow_html=True)
-        elif output == 3:
+        elif output >25:
             st.markdown(danger_html,unsafe_allow_html=True)
 
 if __name__=='__main__':
