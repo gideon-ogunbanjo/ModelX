@@ -40,9 +40,7 @@ def main():
     st.title("Input parameters below:")
     #taking user input
     Density = st.number_input("Density (Cm): ")
-    Age = st.number_input('Age', min_value=1, max_value=50, value=1, step=1)
     Weight = st.number_input("Weight (In pounds): ")
-    Height = st.number_input("Height (Inches): ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
@@ -70,7 +68,7 @@ def main():
     """
 
     if st.button("Predict the BodyFat"):
-        output = predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+        output = predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
         st.success('The predicted body fat is {}%'.format(output))
 
         if output > 15 and output < 20:
