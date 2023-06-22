@@ -24,8 +24,8 @@ st.set_page_config(
 
 )
 #creating a function that uses the file to make predictions
-def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
-    input=np.array([[Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
+def predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
+    input=np.array([[Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     
     return int(prediction)
@@ -42,7 +42,7 @@ def main():
     Density = st.number_input("Density (Cm): ")
     Age = st.number_input('Age', min_value=1, max_value=50, value=1, step=1)
     Weight = st.number_input("Weight (In pounds): ")
-    Height = st.number_input("Height (Cm): ")
+    Height = st.number_input("Height (Inches): ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
