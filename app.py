@@ -2,6 +2,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+from PIL import Image
 import json
 # loading and reading the file
 # Opening the file
@@ -15,13 +16,14 @@ model = pickle.load(open('modelX.pkl','rb'))
 # model.close()
 
 # creating welcome page
-st.set_page_config(
-    page_title="ModelX",
-    page_icon="🤖",
-    layout="centered",
-    initial_sidebar_state="expanded",
-)
+# favicon = Image.open("favicon.ico")
+# st.set_page_config(
+#     page_title="ModelX",
+#     page_icon=favicon,
+#     layout="wide",
+#     initial_sidebar_state="expanded",
 
+# )
 #creating a function that uses the file to make predictions
 def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
@@ -55,17 +57,17 @@ def main():
     Forearm = st.number_input("Forearm Size: ")
     Wrist = st.number_input("Wrist Size: ")
     safe_html ="""  
-        <div style="background-color:#80ff80; padding:10px >
+        <div style="background-color:#09BC8A; padding:10px >
         <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
         </div>
     """
     warn_html ="""  
-      <div style="background-color:#F4D03F; padding:10px >
+      <div style="background-color:#FCBA04; padding:10px >
       <h2 style="color:white;text-align:center;"> The individual has relatively lower chances for modeling.</h2>
       </div>
     """
     danger_html="""  
-      <div style="background-color:#F08080; padding:10px >
+      <div style="background-color:#A50104; padding:10px >
        <h2 style="color:black ;text-align:center;"> The individual's chances for modeling are low/uncertain.</h2>
        </div>
     """
@@ -83,6 +85,6 @@ def main():
         elif output >25:
             print("The individual's chances for modeling are low/uncertain.")
             st.markdown(danger_html,unsafe_allow_html=True)
-
+st.markdown('Powered by ExpanseAI')
 if __name__=='__main__':
     main()
