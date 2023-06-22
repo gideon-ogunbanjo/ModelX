@@ -15,15 +15,15 @@ model = pickle.load(open('modelX.pkl','rb'))
 # # Closing file
 # model.close()
 
-# creating welcome page
-# favicon = Image.open("favicon.ico")
-# st.set_page_config(
-#     page_title="ModelX",
-#     page_icon=favicon,
-#     layout="wide",
-#     initial_sidebar_state="expanded",
+#creating welcome page
+favicon = Image.open("/Users/gideonogunbanjo/Documents/ModelX/Img/ModelX.png")
+st.set_page_config(
+    page_title="ModelX",
+    page_icon=favicon,
+    layout="wide",
+    initial_sidebar_state="expanded",
 
-# )
+)
 #creating a function that uses the file to make predictions
 def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
