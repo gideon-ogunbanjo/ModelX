@@ -56,17 +56,17 @@ def main():
     Wrist = st.number_input("Wrist Size: ")
     safe_html ="""  
         <div style="background-color:#80ff80; padding:10px >
-        <h2 style="color:white;text-align:center;"> The individual is Fantastic for modeling</h2>
+        <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
         </div>
     """
     warn_html ="""  
       <div style="background-color:#F4D03F; padding:10px >
-      <h2 style="color:white;text-align:center;"> The individual is not advised to pursue a career in modeling</h2>
+      <h2 style="color:white;text-align:center;"> The individual has relatively lower chances for modeling.</h2>
       </div>
     """
     danger_html="""  
       <div style="background-color:#F08080; padding:10px >
-       <h2 style="color:black ;text-align:center;"> The individual is not suitable for modeling</h2>
+       <h2 style="color:black ;text-align:center;"> The individual's chances for modeling are low/uncertain.</h2>
        </div>
     """
 
@@ -75,10 +75,13 @@ def main():
         st.success('The predicted body fat is {}%'.format(output))
 
         if output > 15 and output < 20:
+            print("The individual is highly suitable for modeling.")
             st.markdown(safe_html,unsafe_allow_html=True)
         elif output > 20 and output <25:
+            print("The individual has relatively lower chances for modeling")
             st.markdown(warn_html,unsafe_allow_html=True)
         elif output >25:
+            print("The individual's chances for modeling are low/uncertain.")
             st.markdown(danger_html,unsafe_allow_html=True)
 
 if __name__=='__main__':
