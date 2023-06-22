@@ -20,7 +20,6 @@ favicon = Image.open("/Users/gideonogunbanjo/Documents/ModelX/Img/ModelX.png")
 st.set_page_config(
     page_title="ModelX",
     page_icon=favicon,
-    layout="wide",
     initial_sidebar_state="expanded",
 
 )
@@ -35,12 +34,10 @@ def predict_fat(Density, Age, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, 
 def main():
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
-    <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;"> ModelX </h2>
-    </div>
+    <p> ModelX is a model designed to predict the body fat percentage of indivisuals who might want to pursue a career in modeling.</p>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
-    
+    st.title("Input parameters below:")
     #taking user input
     Density = st.number_input("Density (Cm): ")
     Age = st.number_input('Age', min_value=1, max_value=50, value=1, step=1)
