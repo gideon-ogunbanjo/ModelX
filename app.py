@@ -85,6 +85,6 @@ def main():
         elif output >25:
             print("The individual's chances for modeling are low/uncertain.")
             st.markdown(danger_html,unsafe_allow_html=True)
-st.markdown('Powered by ExpanseAI')
 if __name__=='__main__':
     main()
+st.markdown('Powered by ExpanseAI')
