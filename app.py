@@ -42,20 +42,20 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
     
     #taking user input
-    Density = st.number_input("Density: ")
+    Density = st.number_input("Density (Cm): ")
     Age = st.number_input('Age', min_value=1, max_value=50, value=1, step=1)
-    Weight = st.number_input("Weight: ")
-    Height = st.number_input("Height: ")
-    Neck = st.number_input("Neck Size: ")
-    Chest = st.number_input("Chest Size: ")
-    Abdomen = st.number_input("Abdomen Size: ")
-    Hip = st.number_input("Hip Width: ")
-    Thigh = st.number_input("Thigh Size: ")
-    Knee = st.number_input("Knee Size: ")
-    Ankle = st.number_input("Ankle Size: ")
-    Biceps = st.number_input("Biceps Size: ")
-    Forearm = st.number_input("Forearm Size: ")
-    Wrist = st.number_input("Wrist Size: ")
+    Weight = st.number_input("Weight (In pounds): ")
+    Height = st.number_input("Height (Cm): ")
+    Neck = st.number_input("Neck Size (Cm): ")
+    Chest = st.number_input("Chest Size (Cm): ")
+    Abdomen = st.number_input("Abdomen Size (Cm): ")
+    Hip = st.number_input("Hip Width (Cm): ")
+    Thigh = st.number_input("Thigh Size (Cm): ")
+    Knee = st.number_input("Knee Size (Cm): ")
+    Ankle = st.number_input("Ankle Size (Cm): ")
+    Biceps = st.number_input("Biceps Size (Cm): ")
+    Forearm = st.number_input("Forearm Size (Cm): ")
+    Wrist = st.number_input("Wrist Size (Cm): ")
     safe_html ="""  
         <div style="background-color:#09BC8A; padding:10px >
         <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
