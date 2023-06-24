@@ -24,8 +24,8 @@ st.set_page_config(
 
 )
 #creating a function that uses the file to make predictions
-def predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
-    input=np.array([[Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
+def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
+    input=np.array([[Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     
     return int(prediction)
@@ -40,7 +40,7 @@ def main():
     st.title("Input parameters below:")
     #taking user input
     Density = st.number_input("Density (Cm): ")
-    Weight = st.number_input("Weight (In pounds): ")
+    Body_mass_Index = st.number_input("BMI: ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
@@ -68,7 +68,7 @@ def main():
     """
 
     if st.button("Predict the BodyFat"):
-        output = predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+        output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
         st.success('The predicted body fat is {}%'.format(output))
 
         if output > 15 and output < 20:
