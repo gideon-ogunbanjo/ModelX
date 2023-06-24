@@ -34,13 +34,14 @@ def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee
 def main():
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
-    <p> ModelX is a model designed to predict the body fat percentage of indivisuals who might want to pursue a career in modeling.</p>
+    <p> ModelX is a model designed by ExpanseAI to predict the body fat percentage of aspiring and existing supermodels who might want to pursue a career in modeling, or 
+    monitor their predictions.</p>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
     st.title("Input parameters below:")
     #taking user input
     Density = st.number_input("Density (Cm): ")
-    Body_mass_Index = st.number_input("BMI: ")
+    Body_mass_Index = st.number_input("Body Mass Index: ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
