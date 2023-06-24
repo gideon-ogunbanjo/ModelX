@@ -24,8 +24,8 @@ st.set_page_config(
 
 )
 #creating a function that uses the file to make predictions
-def predict_fat(Density, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
-    input=np.array([[Density, Weight, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
+def predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
+    input=np.array([[Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     
     return int(prediction)
@@ -41,7 +41,6 @@ def main():
     #taking user input
     Density = st.number_input("Density (Cm): ")
     Weight = st.number_input("Weight (In pounds): ")
-    Height = st.number_input("Enter your Height")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
@@ -69,10 +68,8 @@ def main():
     """
 
     if st.button("Predict the BodyFat"):
-        output = predict_fat(Density, Weight / 720, Height, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-        final_output = output / (Height / 65)
-        st.success('The predicted body mass is {}%'.format(final_output))
-
+        output = predict_fat(Density, Weight, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+        st.success('The predicted body fat is {}%'.format(output))
 
         if output > 15 and output < 20:
             print("The individual is highly suitable for modeling.")
