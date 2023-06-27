@@ -16,7 +16,7 @@ model = pickle.load(open('modelx.pkl','rb'))
 # model.close()
 
 #creating welcome page
-favicon = Image.open("/Users/gideonogunbanjo/Documents/ModelX/Img/ModelX.png")
+favicon = Image.open("Img/ModelX.png")
 st.set_page_config(
     page_title="ModelX",
     page_icon=favicon,
