@@ -1,4 +1,9 @@
 # Importing Necessary modules
+import numpy as np
+import pandas as pd
+import pickle as pkl
+from sklearn.linear_model import LinearRegression
+from pydantic import BaseModel
 from fastapi import FastAPI
 import uvicorn
 
