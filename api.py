@@ -9,7 +9,21 @@ import uvicorn
 
 # Declaring our FastAPI instance
 app = FastAPI()
-
+# Creating class to define the request body
+# and the type hints of each attribute
+class request_body(BaseModel):
+    Density : float
+    Body_mass_Index : float
+    Neck : float
+    Chest : float
+    Abdomen : float
+    Hip : float
+    Thigh : float
+    Knee : float
+    Ankle : float
+    Biceps : float
+    Forearm : float
+    Wrist : float
 # Defining path operation for root endpoint
 @app.get('/')
 def main():
