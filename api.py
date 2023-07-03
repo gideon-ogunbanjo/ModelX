@@ -25,13 +25,17 @@ class request_body(BaseModel):
     Forearm : float
     Wrist : float
 # Defining path operation for root endpoint
-@app.get('/')
-def main():
-	return {'message': 'Welcome to ModelX!'}
+import pandas as pd
+import pickle as pkl
+from sklearn.linear_model import LinearRegression
 
-# Defining path operation for /name endpoint
-@app.get('/{name}')
-def hello_name(name : str):
-	# Defining a function that takes only string as input and output the
-	# following message.
-	return {'message': f'Welcome to ModelX!, {name}'}
+# Loading file
+data = pd.read_pickle('modelX.pkl')
+
+# Getting features and targets from the dataset
+X = data.features
+y = data.target
+
+# Fitting our Model on the dataset
+model = LinearRegression()
+model.fit(X,y)
