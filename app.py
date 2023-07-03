@@ -84,18 +84,15 @@ def main():
             output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
             st.success('The predicted body fat is {}%'.format(output))
 
-            if output >= 6 and output <= 13:
+            if output >= 6 and output <= 19:
                 print("The individual is highly suitable for modeling.")
                 st.markdown("The individual is highly suitable for modeling.")
-                st.markdown(safe_html, unsafe_allow_html=True)
-            elif output > 13 and output <= 19:
+            elif output > 19 and output <= 22:
                 print("The individual has relatively lower chances for modeling.")
                 st.markdown("The individual has relatively lower chances for modeling.")
-                st.markdown(warn_html, unsafe_allow_html=True)
-            elif output > 20:
+            elif output > 22:
                 print("The individual's chances for modeling are low/uncertain.")
                 st.markdown("The individual's chances for modeling are low/uncertain.")
-                st.markdown(danger_html, unsafe_allow_html=True)
 if __name__=='__main__':
     main()                
 #adding reference links
