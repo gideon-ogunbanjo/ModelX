@@ -37,9 +37,9 @@ def main():
     <p> ModelX is a model designed by ExpanseAI to predict the body fat percentage of aspiring and existing supermodels who might want to pursue a career in modeling, or 
     monitor their predictions.</p>
     """
-    st.markdown(html_temp, unsafe_allow_html = True)
+    st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
-    #taking user input
+    # taking user input
     Density = st.number_input("Density (Cm): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
     Neck = st.number_input("Neck Size (Cm): ")
@@ -52,40 +52,51 @@ def main():
     Biceps = st.number_input("Biceps Size (Cm): ")
     Forearm = st.number_input("Forearm Size (Cm): ")
     Wrist = st.number_input("Wrist Size (Cm): ")
-    safe_html ="""  
-        <div style="background-color:#09BC8A; padding:10px >
+    safe_html = """  
+        <div style="background-color:#09BC8A; padding:10px">
         <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
         </div>
     """
-    warn_html ="""  
-      <div style="background-color:#FCBA04; padding:10px >
+    warn_html = """  
+      <div style="background-color:#FCBA04; padding:10px">
       <h2 style="color:white;text-align:center;"> The individual has relatively lower chances for modeling.</h2>
       </div>
     """
-    danger_html="""  
-      <div style="background-color:#A50104; padding:10px >
+    danger_html = """  
+      <div style="background-color:#A50104; padding:10px">
        <h2 style="color:black ;text-align:center;"> The individual's chances for modeling are low/uncertain.</h2>
        </div>
     """
 
-    if st.button("Predict the BodyFat"):
-        output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-        st.success('The predicted body fat is {}%'.format(output))
+    # Flag variable to track if all input fields are filled
+    all_fields_filled = False
 
-        if output >= 6 and output <= 13:
-            print("The individual is highly suitable for modeling.")
-            st.markdown("The individual is highly suitable for modeling.")
-            st.markdown(safe_html, unsafe_allow_html=True)
-        elif output > 13 and output <= 19:
-            print("The individual has relatively lower chances for modeling.")
-            st.markdown("The individual has relatively lower chances for modeling.")
-            st.markdown(warn_html, unsafe_allow_html=True)
-        elif output >20:
-            print("The individual's chances for modeling are low/uncertain.")
-            st.markdown("The individual's chances for modeling are low/uncertain.")
-            st.markdown(danger_html,unsafe_allow_html=True)
+    if st.button("Predict the BodyFat"):
+        # Check if all input fields are filled
+        if Density and Body_mass_Index and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
+            all_fields_filled = True
+        else:
+            st.warning('Please fill in all input fields.')
+
+        # Proceed with prediction and display output if all fields are filled
+        if all_fields_filled:
+            output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+            st.success('The predicted body fat is {}%'.format(output))
+
+            if output >= 6 and output <= 13:
+                print("The individual is highly suitable for modeling.")
+                st.markdown("The individual is highly suitable for modeling.")
+                st.markdown(safe_html, unsafe_allow_html=True)
+            elif output > 13 and output <= 19:
+                print("The individual has relatively lower chances for modeling.")
+                st.markdown("The individual has relatively lower chances for modeling.")
+                st.markdown(warn_html, unsafe_allow_html=True)
+            elif output > 20:
+                print("The individual's chances for modeling are low/uncertain.")
+                st.markdown("The individual's chances for modeling are low/uncertain.")
+                st.markdown(danger_html, unsafe_allow_html=True)
 if __name__=='__main__':
-    main()
+    main()                
 #adding reference links
 url = "https://expanseai.netlify.app"
 st.markdown("Powered by [ExpanseAI](%s)" % url)
