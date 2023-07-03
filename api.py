@@ -25,10 +25,6 @@ class request_body(BaseModel):
     Forearm : float
     Wrist : float
 # Defining path operation for root endpoint
-import pandas as pd
-import pickle as pkl
-from sklearn.linear_model import LinearRegression
-
 # Loading file
 data = pd.read_pickle('modelX.pkl')
 
