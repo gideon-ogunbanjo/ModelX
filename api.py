@@ -35,3 +35,22 @@ y = data.target
 # Fitting our Model on the dataset
 model = LinearRegression()
 model.fit(X,y)
+
+# Creating an Endpoint to receive the data to make prediction on.
+@app.post('/predict')
+def predict(data : request_body):
+    # Making the data in a form suitable for prediction
+    test_data = [[
+            data.Density,
+            data.Body_mass_Index,
+            data.Neck,
+            data.Chest,
+            data.Abdomen,
+            data.Hip,
+            data.Thigh,
+            data.Knee,
+            data.Ankle,
+            data.Biceps,
+            data.Forearm,
+            data.Wrist
+    ]]
