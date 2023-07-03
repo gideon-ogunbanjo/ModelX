@@ -98,5 +98,4 @@ def main():
 if __name__=='__main__':
     main()                
 #adding reference links
-url = "https://expanseai.netlify.app"
-st.markdown("Powered by [ExpanseAI](%s)" % url)
+st.markdown("Created by Gideon Ogunbanjo")
