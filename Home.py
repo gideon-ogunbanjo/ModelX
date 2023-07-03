@@ -1,8 +1,8 @@
 import streamlit as st
-from PIL import Image
-favicon = Image.open("Img/ModelX.png")
+
 st.set_page_config(
     page_title="ModelX",
+    page_icon="👋",
 )
 
 st.write("# ModelX - Supermodel Prediction Machine Learning Model! ")
