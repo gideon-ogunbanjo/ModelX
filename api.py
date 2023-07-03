@@ -26,7 +26,7 @@ class request_body(BaseModel):
     Wrist : float
 # Defining path operation for root endpoint
 # Loading file
-data = pd.read_pickle('modelX.pkl')
+data = pd.read_pickle('modelx.pkl')
 
 # Getting features and targets from the dataset
 X = data.features
