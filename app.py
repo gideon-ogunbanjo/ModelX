@@ -86,4 +86,6 @@ def main():
             st.markdown(danger_html,unsafe_allow_html=True)
 if __name__=='__main__':
     main()
-st.markdown('Powered by ExpanseAI')
+#adding reference links
+url = "https://expanseai.netlify.app"
+st.markdown("Powered by [ExpanseAI](%s)" % url)
