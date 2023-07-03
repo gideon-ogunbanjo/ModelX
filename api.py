@@ -54,3 +54,8 @@ def predict(data : request_body):
             data.Forearm,
             data.Wrist
     ]]
+    # Predicting the BodyFat
+    class_idx = model.predict(test_data)[0]
+     
+    # Return the Result
+    return { 'BodyFat' : data.target_names[class_idx]}
