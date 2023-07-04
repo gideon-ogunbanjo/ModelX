@@ -95,5 +95,3 @@ def main():
                 st.markdown("The individual's chances for modeling are low/uncertain.")
 if __name__=='__main__':
     main()                
-#adding reference links
-st.markdown("Created by Gideon Ogunbanjo")
