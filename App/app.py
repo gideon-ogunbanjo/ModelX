@@ -6,7 +6,7 @@ from PIL import Image
 import json
 # loading and reading the file
 # Opening the file
-model = pickle.load(open('modelx.pkl','rb'))
+model = pickle.load(open('App/modelx.pkl','rb'))
 # model = open('model.json')
   
 # # returns JSON object as 
