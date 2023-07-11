@@ -84,7 +84,7 @@ def main():
             output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
             st.success('The predicted body fat is {}%'.format(output))
 
-            if 6 <= output <= 16:
+            if 1 <= output <= 16:
                 print("The individual is highly suitable for modeling.")
                 st.markdown("The individual is highly suitable for modeling.")
                 st.markdown(f"Modeling Success Rate is {100 - output}%")
