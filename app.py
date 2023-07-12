@@ -34,9 +34,8 @@ def predict_fat(Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh,
 def main():
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
-    <p> ModelX is a predictive model specifically designed to estimate the body fat percentage of aspiring and established supermodels. 
-    This model serves the purpose of aiding individuals who aspire to become supermodels or those in the modeling industry who are interested in assessing their body fat percentage 
-    or monitoring their physical attributes relevant to their modeling career.</p>
+    <p> ModelX is a predictive model developed for aspiring and established supermodels to estimate body fat percentage. 
+    It helps individuals in the modeling industry assess and monitor their physical attributes crucial to their modeling career.</p>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
