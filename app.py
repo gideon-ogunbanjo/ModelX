@@ -24,8 +24,8 @@ st.set_page_config(
 
 )
 #creating a function that uses the file to make predictions
-def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
-    input=np.array([[Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
+def predict_fat(Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
+    input=np.array([[Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     
     return int(prediction)
@@ -43,6 +43,7 @@ def main():
     # taking user input
     Density = st.number_input("Density (Cm): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
+    Age = st.number_input("Age: ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
     Abdomen = st.number_input("Abdomen Size (Cm): ")
@@ -74,14 +75,14 @@ def main():
 
     if st.button("Predict the BodyFat"):
         # Check if all input fields are filled
-        if Density and Body_mass_Index and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
+        if Density and Body_mass_Index and Age and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
             all_fields_filled = True
         else:
             st.warning('Please fill in all input fields.')
 
         # Proceed with prediction and display output if all fields are filled
         if all_fields_filled:
-            output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+            output = predict_fat(Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
             st.success('Predicted body fat percentage: {}%'.format(output))
 
             if 1 <= output <= 16:
