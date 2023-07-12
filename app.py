@@ -7,15 +7,8 @@ import json
 # loading and reading the file
 # Opening the file
 model = pickle.load(open('modelx.pkl','rb'))
-# model = open('model.json')
-  
-# # returns JSON object as 
-# # a dictionary
-# data = json.load(model)
-# # Closing file
-# model.close()
 
-#creating welcome page
+# Creating the Welcome Page and Page Configuration
 favicon = Image.open("Img/ModelX.png")
 st.set_page_config(
     page_title="ModelX",
@@ -23,15 +16,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 
 )
-#creating a function that uses the file to make predictions
+
+# Defining the Prediction Function:
 def predict_fat(Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     
     return int(prediction)
 
-# creating the main function
+# Creating the main function
 def main():
+    # Displaying ModelX's description
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
     <p> ModelX is a predictive model developed for aspiring and established supermodels to estimate body fat percentage. 
@@ -39,7 +34,8 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
-    # taking user input
+    
+    # Taking user input
     Density = st.number_input("Density (Cm): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
     Age = st.number_input("Age: ")
@@ -53,6 +49,8 @@ def main():
     Biceps = st.number_input("Biceps Size (Cm): ")
     Forearm = st.number_input("Forearm Size (Cm): ")
     Wrist = st.number_input("Wrist Size (Cm): ")
+    
+    # Creating HTML Templates for Result Visualization
     safe_html = """  
         <div style="background-color:#09BC8A; padding:10px">
         <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
@@ -71,7 +69,8 @@ def main():
 
     # Flag variable to track if all input fields are filled
     all_fields_filled = False
-
+    
+    # Checking Input Completeness and Making Predictions:
     if st.button("Predict the BodyFat"):
         # Check if all input fields are filled
         if Density and Body_mass_Index and Age and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
@@ -96,5 +95,7 @@ def main():
                 print("The individual's chances for modeling are low/uncertain.")
                 st.markdown("The individual's chances for modeling are low/uncertain.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
+
+# Main Function Invocation:
 if __name__=='__main__':
     main()                
