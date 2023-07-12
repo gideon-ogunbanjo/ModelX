@@ -9,6 +9,7 @@ import joblib
 
 app = FastAPI()
 
+# Defines the request body schema using pydantic's BaseModel
 class RequestBody(BaseModel):
     Density: float
     Body_mass_Index: float
@@ -24,13 +25,14 @@ class RequestBody(BaseModel):
     Forearm: float
     Wrist: float
 
-# Load the model
+# Loads the Serialized trained model
 super_model = joblib.load('modelX.joblib')
 
-# Create an endpoint to receive the data for prediction
+# Creates an endpoint to receive the data for predictions
 @app.post('/predict')
 def predict(request: RequestBody):
-    # Making the data in a form suitable for prediction
+    
+    # Makes the data into a form suitable for predictions
     test_data = [[
         request.Density,
         request.Body_mass_Index,
@@ -47,12 +49,13 @@ def predict(request: RequestBody):
         request.Wrist
     ]]
     
-    # Predicting the BodyFat
+    # Predicts the BodyFat 
     pred_BF = super_model.predict(test_data)[0]
      
-    # Return the Result
+    # Returns the Result
     return {'BodyFat': pred_BF}
 
+# Run the API server
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)
 
