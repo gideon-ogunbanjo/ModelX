@@ -3,6 +3,7 @@ import streamlit as st
 import pickle
 import numpy as np
 from PIL import Image
+
 # loading and reading the file
 # Opening the file
 model = pickle.load(open('modelx.pkl', 'rb'))
