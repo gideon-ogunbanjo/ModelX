@@ -12,6 +12,7 @@ app = FastAPI()
 class RequestBody(BaseModel):
     Density: float
     Body_mass_Index: float
+    Age: float
     Neck: float
     Chest: float
     Abdomen: float
@@ -33,6 +34,7 @@ def predict(request: RequestBody):
     test_data = [[
         request.Density,
         request.Body_mass_Index,
+        request.Age,
         request.Neck,
         request.Chest,
         request.Abdomen,
