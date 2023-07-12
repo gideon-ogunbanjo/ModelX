@@ -3,10 +3,9 @@ import streamlit as st
 import pickle
 import numpy as np
 from PIL import Image
-import json
 # loading and reading the file
 # Opening the file
-model = pickle.load(open('modelx.pkl','rb'))
+model = pickle.load(open('modelx.pkl', 'rb'))
 
 # Creating the Welcome Page and Page Configuration
 favicon = Image.open("Img/ModelX.png")
@@ -14,14 +13,12 @@ st.set_page_config(
     page_title="ModelX",
     page_icon=favicon,
     initial_sidebar_state="expanded",
-
 )
 
 # Defining the Prediction Function:
 def predict_fat(Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
     input=np.array([[Density, Body_mass_Index, Age, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
-    
     return int(prediction)
 
 # Creating the main function
@@ -98,4 +95,4 @@ def main():
 
 # Main Function Invocation:
 if __name__=='__main__':
-    main()                
+    main()
