@@ -51,9 +51,11 @@ def predict(request: RequestBody):
     pred_BF = super_model.predict(test_data)[0]
      
     # Returns the Result
-    return {'BodyFat': pred_BF}
+    return {
+        'BodyFat': pred_BF
+        }
 
 # Run the API server
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8000, reload=True)
 
