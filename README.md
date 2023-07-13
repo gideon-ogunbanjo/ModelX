@@ -18,7 +18,7 @@ Comparing the metrics, the Linear Regression is the best pick because it has a b
 Following the conclusion of the development phase, the deployment strategy entails the availability of ModelX both as a Web App and an API. This comprehensive approach aims to ensure widespread accessibility and usability of ModelX, catering to diverse user needs and preferences.
 ### Deployment Progress
 
-- [x] Web Application
+- [x] Web Application - [ModelX] (https://modelX.streamlit.app/).
 - [x] API
 
 ### Conclusion:
