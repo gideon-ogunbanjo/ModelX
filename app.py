@@ -92,6 +92,7 @@ def main():
                 print("The individual's chances for modeling are low/uncertain.")
                 st.markdown("The individual's chances for modeling are low/uncertain.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
+st.markdown("Created by Gideon Ogunbanjo")
 
 # Main Function Invocation:
 if __name__=='__main__':
