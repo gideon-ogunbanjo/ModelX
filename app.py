@@ -34,7 +34,7 @@ def main():
     st.title("Input parameters below:")
     
     # Taking user input
-    Density = st.number_input("Density (Cm): ")
+    Density = st.number_input("Density (g/cm3): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
     Neck = st.number_input("Neck Size (Cm): ")
     Chest = st.number_input("Chest Size (Cm): ")
