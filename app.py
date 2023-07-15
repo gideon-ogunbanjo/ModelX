@@ -92,7 +92,8 @@ def main():
                 print("The individual's chances for modeling are low/uncertain.")
                 st.markdown("The individual's chances for modeling are low/uncertain.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
-
+    link='Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
+    st.markdown(link,unsafe_allow_html=True)
 # Main Function Invocation:
 if __name__=='__main__':
     main()
