@@ -6,7 +6,7 @@ from PIL import Image
 
 # loading and reading the file
 # Opening the file
-model = pickle.load(open('modelx.pkl', 'rb'))
+model = pickle.load(open('./App/modelx.pkl', 'rb'))
 
 # Creating the Welcome Page and Page Configuration
 favicon = Image.open("Img/ModelX.png")
