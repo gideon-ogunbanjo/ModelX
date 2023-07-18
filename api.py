@@ -25,7 +25,7 @@ class RequestBody(BaseModel):
     Wrist: float
 
 # Loads the Serialized trained model
-super_model = joblib.load('modelX.joblib')
+super_model = joblib.load('./API/modelX.joblib')
 
 # Creates an endpoint to receive the data for predictions
 @app.post('/predict')
