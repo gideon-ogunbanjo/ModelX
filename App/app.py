@@ -27,7 +27,7 @@ def main():
     # Displaying ModelX's description
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
-    <p> ModelX is a predictive model developed for aspiring and established supermodels to estimate body fat percentage. 
+    <p> ModelX is a predictive model developed for aspiring and established runway supermodels to estimate body fat percentage. 
     It helps individuals in the modeling industry assess and monitor their physical attributes crucial to their modeling career.</p>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
