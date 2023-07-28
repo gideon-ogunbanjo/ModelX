@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
-import pickle as pkl
 from sklearn.linear_model import LinearRegression
 from pydantic import BaseModel
 from fastapi import FastAPI
 import uvicorn
-import joblib
+from joblib import load
 
 app = FastAPI()
 
@@ -25,7 +24,7 @@ class RequestBody(BaseModel):
     Wrist: float
 
 # Loads the Serialized trained model
-super_model = joblib.load('modelX.joblib')
+super_model = load('modelX.joblib')
 
 # Creates an endpoint to receive the data for predictions
 @app.post('/predict')
@@ -58,4 +57,3 @@ def predict(request: RequestBody):
 # Run the API server
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000, reload=True)
-
