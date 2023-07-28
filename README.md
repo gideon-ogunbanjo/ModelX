@@ -26,7 +26,7 @@ ModelX is a powerful tool for predicting body fat percentage and assessing an in
 
 ### Demo
 
-https://github.com/gideon-ogunbanjo/ModelX/assets/85284242/cb626e4d-890e-4cfc-92f0-8f287cf8c7f9
+https://github.com/gideon-ogunbanjo/ModelX/assets/85284242/7b208432-75bf-4477-9105-ad255665b66e
 
 
 ### Creator
