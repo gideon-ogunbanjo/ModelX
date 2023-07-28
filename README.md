@@ -24,5 +24,10 @@ Following the conclusion of the development phase, the deployment strategy entai
 ### Conclusion:
 ModelX is a powerful tool for predicting body fat percentage and assessing an individual's chances of becoming a supermodel. By utilizing advanced machine learning techniques, ModelX can provide accurate predictions and help identify individuals who may be suitable for a career in runway modeling.
 
+### Demo
+
+https://github.com/gideon-ogunbanjo/ModelX/assets/85284242/cb626e4d-890e-4cfc-92f0-8f287cf8c7f9
+
+
 ### Creator
 Gideon Ogunbanjo
