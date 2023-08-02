@@ -8,7 +8,7 @@ from PIL import Image
 # Opening the file
 model = pickle.load(open('./App/modelx.pkl', 'rb'))
 
-# Creating the Welcome Page and Page Configuration
+# Welcome Page and Page Configuration
 favicon = Image.open("Img/ModelX.png")
 st.set_page_config(
     page_title="ModelX",
@@ -22,7 +22,7 @@ def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee
     prediction = model.predict(input)
     return int(prediction)
 
-# Creating the main function
+# Main function
 def main():
     # Displaying ModelX's description
     st.title("ModelX - Supermodel Prediction Model")
@@ -47,7 +47,7 @@ def main():
     Forearm = st.number_input("Forearm Size (Cm): ")
     Wrist = st.number_input("Wrist Size (Cm): ")
     
-    # Creating HTML Templates for Result Visualization
+    # HTML Templates for Result Visualization
     safe_html = """  
         <div style="background-color:#09BC8A; padding:10px">
         <h2 style="color:white;text-align:center;"> The individual is highly suitable for modeling.</h2>
