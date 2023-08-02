@@ -8,7 +8,7 @@ from joblib import load
 
 app = FastAPI()
 
-# Request body schema using pydantic's BaseModel
+# Request body schema class using pydantic's BaseModel
 class RequestBody(BaseModel):
     Density: float
     Body_mass_Index: float
