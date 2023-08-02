@@ -1,4 +1,4 @@
-#importing librarires
+# Importing librarires
 import streamlit as st
 import pickle
 import numpy as np
@@ -69,17 +69,17 @@ def main():
     
     # Checking Input Completeness and Making Predictions:
     if st.button("Predict the BodyFat"):
-        # Check if all input fields are filled
+        # Checking if all input fields are filled
         if Density and Body_mass_Index and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
             all_fields_filled = True
         else:
             st.warning('Please fill in all input fields.')
 
-        # Proceed with prediction and display output if all fields are filled
+        # Proceeds with prediction and display output if all fields are filled
         if all_fields_filled:
             output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
             st.success('Predicted body fat percentage: {}%'.format(output))
-
+            # Adding conditions for predictions
             if 1 <= output <= 20:
                 print("The individual is highly suitable for modeling.")
                 st.markdown("The individual is highly suitable for modeling.")
