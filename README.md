@@ -5,26 +5,29 @@ ModelX (Modeling Optimization, Data-driven Estimation, and Learning eXperience) 
 
 ### How to Use:
 To use ModelX, you will need to input the individual's physical attributes as features, and the model will output the predicted body fat percentage. You can then use this information to assess the individual's chances of becoming a runway supermodel.
-
-### Model Performance:
-ModelX has been evaluated on a separate testing dataset, achieving a Mean Squared Error (MSE) of 0.87 and an R2 score of 0.99. The model was was evaluated and produced an overall model accuracy of 98%. These metrics indicate that ModelX has an excellent predictive performance and can provide accurate predictions of body fat percentage.
-
-Comparing the metrics, the Linear Regression is the best pick because it has a better model accuracy (98%).
-
-### Deployment:
-Following the conclusion of the development phase, the deployment strategy entails the availability of ModelX both as a Web App and an API. This comprehensive approach aims to ensure widespread accessibility and usability of ModelX, catering to diverse user needs and preferences.
 ### Deployment Progress
 
 - [x] Web Application - [ModelX] (https://modelx.streamlit.app/).
 - [x] API - Incomplete
 
-### Conclusion:
-ModelX is a powerful tool for predicting body fat percentage and assessing an individual's chances of becoming a supermodel. By utilizing advanced machine learning techniques, ModelX can provide accurate predictions and help identify individuals who may be suitable for a career in runway modeling.
-
 ### Demo
 
 https://github.com/gideon-ogunbanjo/ModelX/assets/85284242/7b208432-75bf-4477-9105-ad255665b66e
 
+### Dependencies
+ModelX was built using Python and the following libraries:
+- fastapi==0.101.1
+- joblib==1.2.0
+- numpy==1.25.2
+- pandas==2.0.3
+- Pillow==9.5.0
+- Pillow==10.0.0
+- plotly==5.14.1
+- pydantic==1.10.9
+- scikit_learn==1.2.2
+- streamlit==1.25.0
+- uvicorn==0.23.2
+You can find these dependencies listed in the `requirements.txt` file.
 
 ### Creator
 Gideon Ogunbanjo
