@@ -33,7 +33,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
     
-    # 
+    # User Input
     Density = st.number_input("Density (g/cm3): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
     Neck = st.number_input("Neck Size (Cm): ")
@@ -92,7 +92,7 @@ def main():
     # Flag variable to track if all input fields are filled
     all_fields_filled = False
     
-    # Checking Input Completeness and Making Predictions:
+    # Input Completeness and Making Predictions:
     if st.button("Predict the BodyFat"):
         # Checking if all input fields are filled
         if Density and Body_mass_Index and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
@@ -100,11 +100,11 @@ def main():
         else:
             st.warning('Please fill in all input fields.')
 
-        # Proceeds with prediction and display output if all fields are filled
+        # Prediction and display output (if all fields are filled)
         if all_fields_filled:
             output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
             st.success('Predicted body fat percentage: {}%'.format(output))
-            # Adding conditions for predictions
+            # Conditions for predictions
             if 1 <= output <= 20:
                 st.markdown("The individual is highly suitable for modeling.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
