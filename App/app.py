@@ -33,7 +33,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
     
-    # Taking user input
+    # 
     Density = st.number_input("Density (g/cm3): ")
     Body_mass_Index = st.number_input("Body Mass Index: ")
     Neck = st.number_input("Neck Size (Cm): ")
@@ -47,7 +47,7 @@ def main():
     Forearm = st.number_input("Forearm Size (Cm): ")
     Wrist = st.number_input("Wrist Size (Cm): ")
     
-    # Displaying user input data using a bar chart
+    # Bar Chart user input
     input_data = {
         "Density": Density,
         "Body Mass Index": Body_mass_Index,
@@ -68,7 +68,9 @@ def main():
         y=list(input_data.values()),
         title="User Input Data"
     )
-    st.plotly_chart(fig_input)
+    # Responsive chart design
+    st.title("User Input Data")
+    st.plotly_chart(fig_input, use_container_width=True) 
 
     # HTML Templates for Result Visualization
     safe_html = """  
