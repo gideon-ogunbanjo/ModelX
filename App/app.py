@@ -1,14 +1,15 @@
-# Importing librarires
+# Importing libraries
 import streamlit as st
 import pickle
 import numpy as np
 from PIL import Image
+import plotly.express as px
+import plotly.graph_objects as go
 
-# loading and reading the file
-# Opening the file
+# Loading the model
 model = pickle.load(open('./App/modelx.pkl', 'rb'))
 
-# Welcome Page and Page Configuration
+# Page configuration
 favicon = Image.open("Img/ModelX.png")
 st.set_page_config(
     page_title="ModelX",
@@ -16,15 +17,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Defining the Prediction Function:
+# Prediction function
 def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist):
-    input=np.array([[Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
+    input = np.array([[Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist]]).astype(np.float64)
     prediction = model.predict(input)
     return int(prediction)
 
 # Main function
 def main():
-    # Displaying ModelX's description
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
     <p> ModelX is a predictive model developed for aspiring and established runway supermodels to estimate body fat percentage. 
@@ -47,6 +47,29 @@ def main():
     Forearm = st.number_input("Forearm Size (Cm): ")
     Wrist = st.number_input("Wrist Size (Cm): ")
     
+    # Displaying user input data using a bar chart
+    input_data = {
+        "Density": Density,
+        "Body Mass Index": Body_mass_Index,
+        "Neck": Neck,
+        "Chest": Chest,
+        "Abdomen": Abdomen,
+        "Hip": Hip,
+        "Thigh": Thigh,
+        "Knee": Knee,
+        "Ankle": Ankle,
+        "Biceps": Biceps,
+        "Forearm": Forearm,
+        "Wrist": Wrist
+    }
+
+    fig_input = px.bar(
+        x=list(input_data.keys()),
+        y=list(input_data.values()),
+        title="User Input Data"
+    )
+    st.plotly_chart(fig_input)
+
     # HTML Templates for Result Visualization
     safe_html = """  
         <div style="background-color:#09BC8A; padding:10px">
@@ -81,19 +104,19 @@ def main():
             st.success('Predicted body fat percentage: {}%'.format(output))
             # Adding conditions for predictions
             if 1 <= output <= 20:
-                print("The individual is highly suitable for modeling.")
                 st.markdown("The individual is highly suitable for modeling.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
             elif output > 20 and output <= 23:
-                print("The individual has relatively lower chances for modeling.")
                 st.markdown("The individual has relatively lower chances for modeling.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
             elif output > 24:
-                print("The individual's chances for modeling are low/uncertain.")
                 st.markdown("The individual's chances for modeling are low/uncertain.")
                 st.markdown(f"Modeling Success Rate: {100 - output}%")
-    link='Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
-    st.markdown(link,unsafe_allow_html=True)
+    
+    # Created by link
+    created_by_link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
+    st.markdown(created_by_link, unsafe_allow_html=True)
+
 # Main Function Invocation:
 if __name__=='__main__':
     main()
