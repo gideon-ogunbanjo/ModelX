@@ -4,7 +4,7 @@ A Supermodel Prediction Machine Learning Model
 ModelX (Modeling Optimization, Data-driven Estimation, and Learning eXperience) is a machine learning model designed to predict the body fat percentage of an individual based on various physical attributes such as Density, Boddy mass index etc. The higher the body fat percentage, the lesser the individual's chances of becoming a runway supermodel.
 
 ### How to Use:
-To use ModelX, you will need to input the individual's physical attributes as features, and the model will output the predicted body fat percentage. You can then use this information to assess the individual's chances of becoming a runway supermodel.
+To use ModelX, you will need to input the individual's physical attributes as features, and the model will output the predicted body fat percentage and modeling suitability value. You can then use this information to assess the individual's chances of becoming a runway supermodel.
 ### Deployment Progress
 
 - [x] Web Application - [ModelX] (https://modelx.streamlit.app/).
