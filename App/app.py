@@ -101,19 +101,19 @@ def main():
             st.warning('Please fill in all input fields.')
 
         # Prediction and display output (if all fields are filled)
-        if all_fields_filled:
-            output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-            st.success('Predicted body fat percentage: {}%'.format(output))
-            # Conditions for predictions
-            if 1 <= output <= 20:
-                st.markdown("The individual is highly suitable for modeling.")
-                st.markdown(f"Modeling Success Rate: {100 - output}%")
-            elif output > 20 and output <= 23:
-                st.markdown("The individual has relatively lower chances for modeling.")
-                st.markdown(f"Modeling Success Rate: {100 - output}%")
-            elif output > 24:
-                st.markdown("The individual's chances for modeling are low/uncertain.")
-                st.markdown(f"Modeling Success Rate: {100 - output}%")
+        # if all_fields_filled:
+        #     output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+        #     st.success('Predicted body fat percentage: {}%'.format(output))
+        #     # Conditions for predictions
+        #     if 1 <= output <= 20:
+        #         st.markdown("The individual is highly suitable for modeling.")
+        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
+        #     elif output > 20 and output <= 23:
+        #         st.markdown("The individual has relatively lower chances for modeling.")
+        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
+        #     elif output > 24:
+        #         st.markdown("The individual's chances for modeling are low/uncertain.")
+        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
     
     # Created by link
     created_by_link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
