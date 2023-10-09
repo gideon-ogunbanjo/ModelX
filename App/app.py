@@ -114,6 +114,7 @@ def main():
         #     elif output > 24:
         #         st.markdown("The individual's chances for modeling are low/uncertain.")
         #         st.markdown(f"Modeling Success Rate: {100 - output}%")
+        st.write("**Model under Maintainance!**")
     
     # Created by link
     created_by_link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
