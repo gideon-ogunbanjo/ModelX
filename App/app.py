@@ -4,7 +4,6 @@ import pickle
 import numpy as np
 from PIL import Image
 import plotly.express as px
-import plotly.graph_objects as go
 
 # Loading the model
 model = pickle.load(open('./App/modelx.pkl', 'rb'))
@@ -27,25 +26,25 @@ def predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee
 def main():
     st.title("ModelX - Supermodel Prediction Model")
     html_temp = """
-    <p> ModelX is a predictive model developed for aspiring and established runway supermodels to estimate body fat percentage. 
+    <p>ModelX is a predictive model developed for aspiring and established runway supermodels to estimate body fat percentage. 
     It helps individuals in the modeling industry assess and monitor their physical attributes crucial to their modeling career.</p>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     st.title("Input parameters below:")
     
     # User Input
-    Density = st.number_input("Density (g/cm3): ")
-    Body_mass_Index = st.number_input("Body Mass Index: ")
-    Neck = st.number_input("Neck Size (Cm): ")
-    Chest = st.number_input("Chest Size (Cm): ")
-    Abdomen = st.number_input("Abdomen Size (Cm): ")
-    Hip = st.number_input("Hip Width (Cm): ")
-    Thigh = st.number_input("Thigh Size (Cm): ")
-    Knee = st.number_input("Knee Size (Cm): ")
-    Ankle = st.number_input("Ankle Size (Cm): ")
-    Biceps = st.number_input("Biceps Size (Cm): ")
-    Forearm = st.number_input("Forearm Size (Cm): ")
-    Wrist = st.number_input("Wrist Size (Cm): ")
+    Density = st.number_input("Density (g/cm3): ", format="%.2f")
+    Body_mass_Index = st.number_input("Body Mass Index: ", format="%.2f")
+    Neck = st.number_input("Neck Size (Cm): ", format="%.2f")
+    Chest = st.number_input("Chest Size (Cm): ", format="%.2f")
+    Abdomen = st.number_input("Abdomen Size (Cm): ", format="%.2f")
+    Hip = st.number_input("Hip Width (Cm): ", format="%.2f")
+    Thigh = st.number_input("Thigh Size (Cm): ", format="%.2f")
+    Knee = st.number_input("Knee Size (Cm): ", format="%.2f")
+    Ankle = st.number_input("Ankle Size (Cm): ", format="%.2f")
+    Biceps = st.number_input("Biceps Size (Cm): ", format="%.2f")
+    Forearm = st.number_input("Forearm Size (Cm): ", format="%.2f")
+    Wrist = st.number_input("Wrist Size (Cm): ", format="%.2f")
     
     # Bar Chart user input
     input_data = {
@@ -90,36 +89,27 @@ def main():
     """
 
     # Flag variable to track if all input fields are filled
-    all_fields_filled = False
+    all_fields_filled = all(v is not None and v != 0 for v in input_data.values())
     
     # Input Completeness and Making Predictions:
     if st.button("Predict the BodyFat"):
-        # Checking if all input fields are filled
-        if Density and Body_mass_Index and Neck and Chest and Abdomen and Hip and Thigh and Knee and Ankle and Biceps and Forearm and Wrist:
-            all_fields_filled = True
+        if all_fields_filled:
+            output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
+            st.success(f'Predicted body fat percentage: {output}%')
+            # Conditions for predictions
+            if 1 <= output <= 20:
+                st.markdown(safe_html, unsafe_allow_html=True)
+            elif 21 <= output <= 23:
+                st.markdown(warn_html, unsafe_allow_html=True)
+            else:
+                st.markdown(danger_html, unsafe_allow_html=True)
         else:
             st.warning('Please fill in all input fields.')
-
-        # Prediction and display output (if all fields are filled)
-        # if all_fields_filled:
-        #     output = predict_fat(Density, Body_mass_Index, Neck, Chest, Abdomen, Hip, Thigh, Knee, Ankle, Biceps, Forearm, Wrist)
-        #     st.success('Predicted body fat percentage: {}%'.format(output))
-        #     # Conditions for predictions
-        #     if 1 <= output <= 20:
-        #         st.markdown("The individual is highly suitable for modeling.")
-        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
-        #     elif output > 20 and output <= 23:
-        #         st.markdown("The individual has relatively lower chances for modeling.")
-        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
-        #     elif output > 24:
-        #         st.markdown("The individual's chances for modeling are low/uncertain.")
-        #         st.markdown(f"Modeling Success Rate: {100 - output}%")
-        st.write("**Model under Maintainance!**")
     
     # Created by link
     created_by_link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
     st.markdown(created_by_link, unsafe_allow_html=True)
 
 # Main Function Invocation:
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
